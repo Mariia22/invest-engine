@@ -4,7 +4,7 @@ import { cards } from './data/data'
 
 function App() {
   return (
-    <section>
+    <section className='container'>
       {cards.map(card => (
         <Card
           key={card.key}
@@ -12,11 +12,15 @@ function App() {
           cardLink={card.cardLink}
           handleClick={card.handleClick}
           title={card.title}
+          titleSize={card.titleSize}
           text={card.text}
           imageLink={card.imageLink!}
           alt={card.alt!}
           width={card.width!}
-          height={card.height!} />
+          height={card.height!}
+          cardSpan={card.cardSpan}
+          cardIsClickable={card.cardIsClickable}
+        />
       ))}
     </section>
   )
