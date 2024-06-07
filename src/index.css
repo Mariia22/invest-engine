@@ -1,15 +1,10 @@
+@import 'reset-css';
+
 @font-face {
   font-family: 'SF Font';
   src:
     local('SF Font'),
     url(./../assets/fonts/SanFranciscoFont.otf) format('otf');
-}
-
-@font-face {
-  font-family: 'Poppins';
-  src:
-    local('Poppins'),
-    url(./../assets/fonts/Poppins-SemiBold.ttf) format('ttf');
 }
 
 :root {

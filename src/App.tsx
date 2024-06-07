@@ -1,16 +1,18 @@
 import './App.css'
 import Card from './components/Card/Card'
+import { CardProps } from './components/Card/types'
 import { cards } from './data/data'
 
 function App() {
   return (
     <section className='container'>
-      {cards.map(card => (
+      {cards.map((card: CardProps) => (
         <Card
           key={card.key}
           theme={card.theme}
+          clickable={card.clickable}
           cardLink={card.cardLink}
-          handleClick={card.handleClick}
+          onClick={card.onClick}
           title={card.title}
           titleSize={card.titleSize}
           text={card.text}
@@ -18,8 +20,8 @@ function App() {
           alt={card.alt!}
           width={card.width!}
           height={card.height!}
-          cardSpan={card.cardSpan}
-          cardIsClickable={card.cardIsClickable}
+          style={card.style}
+          className={card.className}
         />
       ))}
     </section>

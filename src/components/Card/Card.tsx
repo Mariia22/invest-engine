@@ -4,18 +4,22 @@ import './Card.css';
 import './../../index.css';
 import cx from 'classnames';
 
-function Card({ cardIsClickable, theme, cardLink, handleClick, title, titleSize, text, imageLink, alt, width, height, cardSpan }: CardProps) {
+function Card({ clickable, theme, cardLink, onClick, title, titleSize, text, imageLink, alt, width, height, style, className }: CardProps) {
+  const content = <CardContent title={title} titleSize={titleSize} text={text} imageLink={imageLink} alt={alt} width={width} height={height} />;
+
+  if (!clickable) {
+    return (
+      <div className={cx("card", theme, className)} style={style}>{content}</div>
+    )
+  }
+
   if (cardLink) {
     return (
-      <a href={cardLink} className={cx("card", theme, cardIsClickable && "card__pointer", cardSpan)}>
-        <CardContent title={title} titleSize={titleSize} text={text} imageLink={imageLink} alt={alt} width={width} height={height} />
-      </a>)
+      <a href={cardLink} className={cx("card", "card-clickable", theme, className)} style={style}>{content}</a>)
   }
 
   return (
-    <div onClick={handleClick} className={cx("card", theme, cardIsClickable && "card__pointer", cardSpan)}>
-      <CardContent title={title} titleSize={titleSize} text={text} imageLink={imageLink} alt={alt} width={width} height={height} />
-    </div>
+    <div onClick={onClick} className={cx("card", "card-clickable", theme, className)} style={style}>{content}</div>
   )
 }
 export default Card;

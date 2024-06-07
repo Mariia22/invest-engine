@@ -1,12 +1,21 @@
 .card {
   display: flex;
   flex-direction: column;
-  padding: 2rem 0.25rem 2rem 2rem;
-  border-radius: 12px;
+  padding: 2rem 0.25rem 0.25rem 2rem;
+  border-radius: 8px;
   text-decoration: none;
 }
 
-.card__content {
+.card-clickable {
+  cursor: pointer;
+}
+
+.card-clickable.card:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s;
+}
+
+.card__info {
   display: flex;
 }
 
@@ -14,29 +23,37 @@
   font-family: 'Poppins', sans-serif;
   line-height: 44px;
   font-weight: 600;
+  letter-spacing: 0.5px;
+  margin-right: 1.25rem;
 }
 
-.card__title__xs {
+.card__text {
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+}
+
+.card__title-size-xs {
   font-size: 18px;
 }
 
-.card__title__small {
+.card__title-size-small {
   font-size: 24px;
 }
 
-.card__title__medium {
+.card__title-size-medium {
   font-size: 32px;
 }
 
-.card__title__large {
+.card__title-size-large {
   font-size: 48px;
 }
 
-.card__pointer {
-  cursor: pointer;
+.card__image {
+  align-self: flex-end;
 }
 
-.magenta {
+.card-color-magenta {
   background-color: #fe3d9a;
   color: #ffffff;
   -webkit-box-shadow: 0px 16px 60px 0px rgba(254, 61, 154, 0.35);
@@ -44,7 +61,7 @@
   box-shadow: 0px 16px 60px 0px rgba(254, 61, 154, 0.35);
 }
 
-.blue {
+.card-color-blue {
   background-color: #3b3bf5;
   color: #ffffff;
   -webkit-box-shadow: 0px 16px 60px 0px rgba(59, 59, 245, 0.35);
@@ -52,7 +69,7 @@
   box-shadow: 0px 16px 60px 0px rgba(59, 59, 245, 0.35);
 }
 
-.white {
+.card-color-white {
   background-color: #ffffff;
   color: #000000;
   border-left: 8px solid #3b3bf5;
@@ -62,10 +79,11 @@
 }
 
 @media screen and (min-width: 767px) {
-  .card__span2 {
-    grid-column: span 2;
+  .card {
+    border-radius: 12px;
   }
-  .card__span3 {
-    grid-column: span 3;
+
+  .card-span2 {
+    grid-column: span 2;
   }
 }

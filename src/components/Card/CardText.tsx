@@ -2,7 +2,7 @@ import { CardTextProps } from "./types";
 
 function CardText({ text }: CardTextProps) {
   return (
-    <p>{text}</p>
+    <p className="card__text">{text}</p>
   );
 }
 export default CardText;

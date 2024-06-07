@@ -7,7 +7,7 @@ function CardContent({ title, titleSize, text, imageLink, alt, width, height }: 
   return (
     <>
       <CardTitle title={title} titleSize={titleSize} />
-      <div className="card__content">
+      <div className="card__info">
         <CardText text={text} />
         {imageLink && alt && width && height && <CardImage imageLink={imageLink} alt={alt} width={width} height={height} />}
       </div>
