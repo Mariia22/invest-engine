@@ -6,7 +6,7 @@ import { cards } from './data/data'
 function App() {
   return (
     <section className='container'>
-      {cards.map((card: CardProps) => (<Card {...card} />))}
+      {cards.map((card: CardProps) => <Card {...card} key={card.key} />)}
     </section>
   )
 }
